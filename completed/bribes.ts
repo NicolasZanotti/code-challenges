@@ -45,12 +45,6 @@ console.log(
     swap(0, 5, [1, 2, 3, 4, 5, 6]).toString() === '6,2,3,4,5,1'
 );
 
-/*
-function getPrevBribeState(line: readonly number[], indexOfBribe): number[] {
-    const clone = [...line];
-    return swap(indexOfBribe, clone[indexOfBribe] - 1, clone);
-}
-*/
 function getPrevBribeState(line: readonly number[], indexOfBribe: number = 0): number[] {
     if (indexOfBribe < 0 || indexOfBribe > line.length) throw new RangeError('Index of bribe is out of bounds');
 
@@ -90,28 +84,6 @@ console.log(
     getPrevBribeState([1, 4, 2, 3], 1).toString() === '1,2,4,3'
 );
 
-
-// function minimumBribes(queueLength: number, queue: string): number {
-//     let count = 0;
-
-//     // Convert string to array of numbers
-//     const a: readonly number[] = Object.freeze(
-//         queue.split(' ').map(t => parseInt(t))
-//     );
-
-//     let states = [];
-//     states.push(a);
-
-//     let nextBribe = findIndexOfNextBribe(states[states.length - 1]);
-//     while (nextBribe !== -1) {
-//         count += 1;
-//         states.push(getPrevBribeState(states[states.length - 1], nextBribe));
-//         nextBribe = findIndexOfNextBribe(states[states.length - 1]);
-//     }
-
-//     return count;
-// }
-
 function minimumBribes(queueLength: number, queue: string): number {
     const MAXIMUM_BRIBES_ALLOWED = 3;
 
@@ -134,7 +106,7 @@ function minimumBribes(queueLength: number, queue: string): number {
     // Gather all the bribes that have taken place
     let indexOfNextBribe = findIndexOfNextBribe(states[states.length - 1]);
     while (indexOfNextBribe !== -1) {
-        count[ states[states.length - 1][indexOfNextBribe] ] += 1;
+        count[states[states.length - 1][indexOfNextBribe]] += 1;
         states.push(getPrevBribeState(states[states.length - 1], indexOfNextBribe));
         indexOfNextBribe = findIndexOfNextBribe(states[states.length - 1]);
     }
