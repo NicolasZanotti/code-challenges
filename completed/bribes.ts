@@ -85,6 +85,8 @@ console.log(
 );
 
 function minimumBribes(queueLength: number, queue: string): number {
+    'use strict'; // So Object.freeze throws errors.
+    
     const MAXIMUM_BRIBES_ALLOWED = 3;
 
 
