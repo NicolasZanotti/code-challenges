@@ -10,7 +10,7 @@ For example, if the string s = 'abcac' and n = 10, the substring we consider is 
 
 Function Description
 
-Complete the repeatedString function in the editor below. It should return an integer representing the number of occurrences of a in the prefix of length  in the infinitely repeating string.
+Complete the repeatedString function in the editor below. It should return an integer representing the number of occurrences of a in the prefix of length in the infinitely repeating string.
 
 repeatedString has the following parameter(s):
 
