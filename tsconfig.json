@@ -5,6 +5,7 @@
         "moduleResolution": "node",
         "sourceMap": true,
         "outDir": "compiled",
+        "lib":["es2017", "dom"],
     },
     "exclude": [
         "completed"
